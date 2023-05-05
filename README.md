@@ -7,7 +7,7 @@ This tool compares ibmf files for differences. The differences will be shown in 
 Here is an example of running the tool:
 
 ```
-$ .pio/build/stable-linux/program test_fonts/test.ibmf test_fonts/test2.ibmf 
+$ .pio/build/stable/program test_fonts/test.ibmf test_fonts/test2.ibmf 
 IBMF Differences:
 < test_fonts/test.ibmf
 > test_fonts/test2.ibmf
