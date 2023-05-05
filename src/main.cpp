@@ -118,7 +118,7 @@ auto checkGlyphs() {
           if (!(*face1->glyphs[code1] == *face2->glyphs[code2])) {
             std::cout << std::endl
                       << "----- Glyph Metrics differ for codePoint " << CODEPOINT(codePoint)
-                      << std::endl;
+                      << " of pointSize " << +face1->header->pointSize << std::endl;
             font1->showGlyphInfo(std::cout, '<', code1, face1->glyphs[code1]);
             font2->showGlyphInfo(std::cout, '>', code2, face2->glyphs[code2]);
             diffCount += 1;
@@ -126,7 +126,7 @@ auto checkGlyphs() {
           if (!(*face1->bitmaps[code1] == *face2->bitmaps[code2])) {
             std::cout << std::endl
                       << "----- Glyph Pixels differ for codePoint " << CODEPOINT(codePoint)
-                      << std::endl;
+                      << " of pointSize " << +face1->header->pointSize << std::endl;
             font1->showBitmap(std::cout, '<', face1->bitmaps[code1]);
             std::cout << std::endl;
             font2->showBitmap(std::cout, '>', face2->bitmaps[code2]);
@@ -135,7 +135,8 @@ auto checkGlyphs() {
           if (!(*face1->glyphsLigKern[code1] == *face2->glyphsLigKern[code2])) {
             std::cout << std::endl
                       << "----- Glyph Ligature/Kerning differ for codePoint "
-                      << CODEPOINT(codePoint) << std::endl;
+                      << " of pointSize " << +face1->header->pointSize << CODEPOINT(codePoint)
+                      << std::endl;
             font1->showLigKerns(std::cout, '<', face1->glyphsLigKern[code1]);
             std::cout << std::endl;
             font2->showLigKerns(std::cout, '>', face2->glyphsLigKern[code2]);
@@ -143,7 +144,7 @@ auto checkGlyphs() {
           }
         } else {
           std::cout << std::endl
-                    << "----- Face with pointSize " << face1->header->pointSize << std::endl;
+                    << "----- Face with pointSize " << +face1->header->pointSize << std::endl;
           std::cout << "> CodePoint not found: " << CODEPOINT(codePoint) << std::endl;
           diffCount += 1;
         }
@@ -154,7 +155,7 @@ auto checkGlyphs() {
         code1              = font1->translate(codePoint);
         if ((code1 == NO_GLYPH_CODE) || (code1 == SPACE_CODE)) {
           std::cout << std::endl
-                    << "----- Face with pointSize " << face1->header->pointSize << std::endl;
+                    << "----- Face with pointSize " << +face1->header->pointSize << std::endl;
           std::cout << "< CodePoint not found: " << CODEPOINT(codePoint) << std::endl;
           diffCount += 1;
         }
