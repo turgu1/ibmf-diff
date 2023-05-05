@@ -620,22 +620,23 @@ auto IBMFFontDiff::showBitmap(std::ostream &stream, char first, const BitmapPtr 
   stream << '+' << std::endl;
 }
 
+#define CODEPOINT(c) "U+" << std::hex << std::setw(5) << std::setfill('0') << +(c) << std::dec
+
 auto IBMFFontDiff::showGlyphInfo(std::ostream &stream, char first, GlyphCode i,
                                  const GlyphInfoPtr g) const -> void {
   stream << first << " "
          << "[" << i << "]: "
-         << "codePoint: "
-         << "U+" << std::hex << std::setw(5) << std::setfill('0') << getUTF32(i) << std::dec
-         << ", pixWdth: " << +g->bitmapWidth << ", pixHght: " << +g->bitmapHeight
-         << ", hOff: " << +g->horizontalOffset << ", vOff: " << +g->verticalOffset
-         << ", pixSiz: " << +g->packetLength << ", adv: " << +((float)g->advance / 64.0)
-         << ", dynF: " << +g->rleMetrics.dynF << ", 1stBlack: " << +g->rleMetrics.firstIsBlack
+         << "codePoint: " << CODEPOINT(+getUTF32(i)) << ", pixWdth: " << +g->bitmapWidth
+         << ", pixHght: " << +g->bitmapHeight << ", hOff: " << +g->horizontalOffset
+         << ", vOff: " << +g->verticalOffset << ", pixSiz: " << +g->packetLength
+         << ", adv: " << +((float)g->advance / 64.0) << ", dynF: " << +g->rleMetrics.dynF
+         << ", 1stBlack: " << +g->rleMetrics.firstIsBlack
          << ", beforeOptKrn: " << +g->rleMetrics.beforeAddedOptKern
          << ", afterOptKrn: " << +g->rleMetrics.afterAddedOptKern
          << ", ligKrnPgmIdx: " << +g->ligKernPgmIndex;
 
   if (g->mainCode != i) {
-    stream << ", mainCode: " << g->mainCode;
+    stream << ", mainCode: " << +g->mainCode << "(" << CODEPOINT(getUTF32(g->mainCode)) << ")";
   }
   stream << std::endl;
 }
@@ -648,15 +649,18 @@ auto IBMFFontDiff::showLigKerns(std::ostream &stream, char first, GlyphLigKernPt
     for (auto &lig : lk->ligSteps) {
       stream << first << " "
              << "[" << i << "]: "
-             << "NxtGlyphCode: " << +lig.nextGlyphCode << ", "
-             << "LigCode: " << +lig.replacementGlyphCode << std::endl;
+             << "NxtGlyphCode: " << +lig.nextGlyphCode << "("
+             << CODEPOINT(getUTF32(lig.nextGlyphCode)) << "), "
+             << "LigCode: " << +lig.replacementGlyphCode << "("
+             << CODEPOINT(getUTF32(lig.replacementGlyphCode)) << ")" << std::endl;
       i += 1;
     }
 
     for (auto &kern : lk->kernSteps) {
       stream << first << " "
              << "[" << i << "]: "
-             << "NxtGlyphCode: " << +kern.nextGlyphCode << ", "
+             << "NxtGlyphCode: " << +kern.nextGlyphCode << "("
+             << CODEPOINT(getUTF32(kern.nextGlyphCode)) << "), "
              << "Kern: " << (float)(kern.kern / 64.0) << std::endl;
       i += 1;
     }

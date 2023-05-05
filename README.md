@@ -71,7 +71,7 @@ IBMF Differences:
 ----- Glyph Ligature/Kerning differ for codePoint U+00023 of pointSize 14
 < None
 
-> [0]: NxtGlyphCode: 40, Kern: 2
+> [0]: NxtGlyphCode: 40(U+00049), Kern: 2
 
 ----- Face with pointSize 14
 < CodePoint not found: U+0e000
