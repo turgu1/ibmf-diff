@@ -68,7 +68,8 @@ IBMF Differences:
 < [2]: codePoint: U+00023, w: 9, h: 10, hoff: 0, voff: 10, pktLen: 12, adv: 9, dynF: 14, 1stBlack: 0, lKPgmIdx: 255
 > [2]: codePoint: U+00023, w: 9, h: 10, hoff: 0, voff: 10, pktLen: 12, adv: 9, dynF: 14, 1stBlack: 0, lKPgmIdx: 0
 
------ Glyph Ligature/Kerning differ for codePoint  of pointSize 14U+00023
+----- Glyph Ligature/Kerning differ for codePoint U+00023 of pointSize 14
+< None
 
 > [0]: NxtGlyphCode: 40, Kern: 2
 

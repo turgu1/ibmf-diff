@@ -135,7 +135,7 @@ auto checkGlyphs() {
           if (!(*face1->glyphsLigKern[code1] == *face2->glyphsLigKern[code2])) {
             std::cout << std::endl
                       << "----- Glyph Ligature/Kerning differ for codePoint "
-                      << " of pointSize " << +face1->header->pointSize << CODEPOINT(codePoint)
+                      << CODEPOINT(codePoint) << " of pointSize " << +face1->header->pointSize
                       << std::endl;
             font1->showLigKerns(std::cout, '<', face1->glyphsLigKern[code1]);
             std::cout << std::endl;
