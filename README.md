@@ -17,8 +17,8 @@ IBMF Differences:
 > DPI: 75, point siz: 14, linHght: 20, xHght: 8, emSiz: 15, spcSiz: 4, glyphCnt: 95, LKCnt: 1, PixPoolSiz: 700, slantCorr: 0, descHght: 5
 
 ----- Glyph Metrics differ for codePoint U+00021 of pointSize 14
-< [0]: codePoint: U+00021, w: 2, h: 10, hoff: -1, voff: 10, pktLen: 3, adv: 4, dynF: 13, 1stBlack: 1, lKPgmIdx: 255
-> [0]: codePoint: U+00021, w: 2, h: 10, hoff: -1, voff: 10, pktLen: 2, adv: 4, dynF: 12, 1stBlack: 1, lKPgmIdx: 255
+< [0]: codePoint: U+00021, pixWdth: 2, pixHght: 10, hOff: -1, vOff: 10, pixSiz: 3, adv: 4, dynF: 13, 1stBlack: 1, beforeOptKrn: 0, afterOptKrn: 0, ligKrnPgmIdx: 255
+> [0]: codePoint: U+00021, pixWdth: 2, pixHght: 10, hOff: -1, vOff: 10, pixSiz: 2, adv: 4, dynF: 12, 1stBlack: 1, beforeOptKrn: 0, afterOptKrn: 0, ligKrnPgmIdx: 255
 
 ----- Glyph Pixels differ for codePoint U+00021 of pointSize 14
 < +--+
@@ -48,8 +48,8 @@ IBMF Differences:
 > +--+
 
 ----- Glyph Metrics differ for codePoint U+00022 of pointSize 14
-< [1]: codePoint: U+00022, w: 4, h: 3, hoff: -1, voff: 10, pktLen: 2, adv: 6, dynF: 14, 1stBlack: 1, lKPgmIdx: 255
-> [1]: codePoint: U+00022, w: 5, h: 3, hoff: -1, voff: 10, pktLen: 2, adv: 7, dynF: 14, 1stBlack: 1, lKPgmIdx: 255
+< [1]: codePoint: U+00022, pixWdth: 4, pixHght: 3, hOff: -1, vOff: 10, pixSiz: 2, adv: 6, dynF: 14, 1stBlack: 1, beforeOptKrn: 0, afterOptKrn: 0, ligKrnPgmIdx: 255
+> [1]: codePoint: U+00022, pixWdth: 5, pixHght: 3, hOff: -1, vOff: 10, pixSiz: 2, adv: 7, dynF: 14, 1stBlack: 1, beforeOptKrn: 0, afterOptKrn: 0, ligKrnPgmIdx: 255
 
 ----- Glyph Pixels differ for codePoint U+00022 of pointSize 14
 < +----+
@@ -65,8 +65,8 @@ IBMF Differences:
 > +-----+
 
 ----- Glyph Metrics differ for codePoint U+00023 of pointSize 14
-< [2]: codePoint: U+00023, w: 9, h: 10, hoff: 0, voff: 10, pktLen: 12, adv: 9, dynF: 14, 1stBlack: 0, lKPgmIdx: 255
-> [2]: codePoint: U+00023, w: 9, h: 10, hoff: 0, voff: 10, pktLen: 12, adv: 9, dynF: 14, 1stBlack: 0, lKPgmIdx: 0
+< [2]: codePoint: U+00023, pixWdth: 9, pixHght: 10, hOff: 0, vOff: 10, pixSiz: 12, adv: 9, dynF: 14, 1stBlack: 0, beforeOptKrn: 0, afterOptKrn: 0, ligKrnPgmIdx: 255
+> [2]: codePoint: U+00023, pixWdth: 9, pixHght: 10, hOff: 0, vOff: 10, pixSiz: 12, adv: 9, dynF: 14, 1stBlack: 0, beforeOptKrn: 2, afterOptKrn: 0, ligKrnPgmIdx: 0
 
 ----- Glyph Ligature/Kerning differ for codePoint U+00023 of pointSize 14
 < None

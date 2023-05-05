@@ -626,11 +626,13 @@ auto IBMFFontDiff::showGlyphInfo(std::ostream &stream, char first, GlyphCode i,
          << "[" << i << "]: "
          << "codePoint: "
          << "U+" << std::hex << std::setw(5) << std::setfill('0') << getUTF32(i) << std::dec
-         << ", w: " << +g->bitmapWidth << ", h: " << +g->bitmapHeight
-         << ", hoff: " << +g->horizontalOffset << ", voff: " << +g->verticalOffset
-         << ", pktLen: " << +g->packetLength << ", adv: " << +((float)g->advance / 64.0)
+         << ", pixWdth: " << +g->bitmapWidth << ", pixHght: " << +g->bitmapHeight
+         << ", hOff: " << +g->horizontalOffset << ", vOff: " << +g->verticalOffset
+         << ", pixSiz: " << +g->packetLength << ", adv: " << +((float)g->advance / 64.0)
          << ", dynF: " << +g->rleMetrics.dynF << ", 1stBlack: " << +g->rleMetrics.firstIsBlack
-         << ", lKPgmIdx: " << +g->ligKernPgmIndex;
+         << ", beforeOptKrn: " << +g->rleMetrics.beforeAddedOptKern
+         << ", afterOptKrn: " << +g->rleMetrics.afterAddedOptKern
+         << ", ligKrnPgmIdx: " << +g->ligKernPgmIndex;
 
   if (g->mainCode != i) {
     stream << ", mainCode: " << g->mainCode;
