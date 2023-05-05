@@ -658,6 +658,8 @@ auto IBMFFontDiff::showLigKerns(std::ostream &stream, char first, GlyphLigKernPt
              << "Kern: " << (float)(kern.kern / 64.0) << std::endl;
       i += 1;
     }
+  } else {
+    stream << first << " None" << std::endl;
   }
 }
 
